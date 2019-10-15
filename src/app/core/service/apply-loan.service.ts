@@ -11,10 +11,11 @@ export class ApplyLoanService {
   
 
   applyLoan(details){
-    // let loanDetails = JSON.stringify(details);
+     let loanDetails = JSON.stringify(details);
     let header = new HttpHeaders();
+    console.log(loanDetails);
     header = header.append('Content-Type', 'application/json');
-    return this.http.post(environment.baseUrl + "/api/loan", details, { headers: header });
+    return this.http.post(environment.baseUrl+"/api/loan",loanDetails,{ headers: header });
   }
 
 
