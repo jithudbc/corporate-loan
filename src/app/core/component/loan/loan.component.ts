@@ -27,7 +27,9 @@ export class LoanComponent implements OnInit {
       regNo: [''],
       amount: [''],
       term: [''],
-      usage:['']
+      usage:[''],
+      companyAge:[''],
+      
       
     });
   }
