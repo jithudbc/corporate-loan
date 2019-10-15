@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { LoginService } from '../../service/login.service';
 
 @Component({
   selector: 'app-login',
@@ -6,10 +8,32 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
-  constructor() { }
+  loginForm: FormGroup;
+  loading = false;
+  submitted = false;
+  constructor(private formBuilder: FormBuilder, private service:LoginService) { }
 
   ngOnInit() {
+    //initilizing the form model
+    this.loginForm = this.formBuilder.group({
+      username: ['', Validators.required],
+      password: ['', [Validators.required]]
+  });
   }
+  //getting fields information
+  get f() { return this.loginForm.controls; }
 
+  //submitting the loginForm
+  onSubmit() {
+    this.submitted = true;
+
+    // stop here if form is invalid
+    if (this.loginForm.invalid) {
+        return;
+    } else{
+      this.service.login(this.loginForm.value).subscribe(data=>console.log(data));
+    }
+
+    this.loading = true;
+  }
 }
