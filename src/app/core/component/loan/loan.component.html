@@ -1,1 +1,171 @@
-<p>loan works!</p>
+<div class="d-flex justify-content-lg-center">
+    <form [formGroup]="mortgageForm" (ngSubmit)="mortgage()" class="col-lg-8">
+        <div *ngIf="tab === 1">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <h5 class="card-text">Loan Details</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-lg-center">
+                <div class="card col-lg-6">
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="firstName">Amount</label>
+                            <input class="form-control" type="text" placeholder="Enter amount" formControlName="amount">
+                        </div>
+                        <div class="form-group">
+                            <label for="term">Term</label>
+                            <input class="form-control" type="text" placeholder="Enter your last name"
+                                formControlName="term">
+                        </div>
+                    </div>
+                </div>
+                <div class="card col-lg-6">
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="usage">Usage</label>
+                            <input class="form-control" type="number" placeholder="Enter your mobile number"
+                                formControlName="usage">
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-lg-12 d-flex justify-content-lg-end">
+                <button type="button" class="btn btn-primary" (click)="next(2)">
+                    Next <span class="badge badge-light">></span>
+
+                </button>
+
+
+            </div>
+        </div>
+
+        <div *ngIf="tab === 2">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <h5 class="card-text">Corporate Details</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-lg-center">
+                <div class="card col-lg-6 col-md-12">
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="organisation">Corportae Name</label>
+                            <input class="form-control" type="text" placeholder="Enter your Corporate name"
+                                formControlName="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="employeeId">Corporate Address</label>
+                            <input class="form-control" type="text" placeholder="Enter your Corporate address"
+                                formControlName="corporateAddress">
+                        </div>
+                    </div>
+                </div>
+                <div class="card col-lg-6">
+                    <div class="card-body">
+
+                        <div class="form-group">
+                            <label for="revenue">Revenue Of Last year</label>
+                            <input class="form-control" type="text" placeholder="Enter last year revenue"
+                                formControlName="revenue">
+                        </div>
+                        <div class="form-group">
+                            <label for="regNo">Commerical Register</label>
+                            <input class="form-control" type="text" placeholder="Enter your Commerical register"
+                                formControlName="regNo">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-12 d-flex justify-content-lg-end">
+                <div class="col-6">
+                    <button class="btn bg-orange btn-md col-md-2 d-flex justify-content-lg-start text-white"
+                        role="button" aria-pressed="true" (click)=next(1)>Prev</button>
+                </div>
+                <div class="col-6">
+                    <button class="btn bg-orange btn-md col-md-2 d-flex justify-content-lg-end text-white" role="button"
+                        aria-pressed="true" (click)=next(3)>Next</button>
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="tab === 3">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <h5 class="card-text">Personal Details</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-lg-center">
+                <div class="card col-lg-6">
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="firstName">First name</label>
+                            <input class="form-control" type="text" placeholder="Enter your First name"
+                                formControlName="firstName">
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input class="form-control" type="number" placeholder="Enter your Last name"
+                                formControlName="lastName">
+                        </div>
+                        <div class="form-group">
+                            <label for="dateOfBirth">DOB</label>
+                            <input class="form-control" type="number" placeholder="Enter DOB "
+                                formControlName="dateOfBirth">
+                        </div>
+                        <div class="form-group">
+                            <label for="phoneNumber">Phone Number</label>
+                            <input class="form-control" type="text" placeholder="Enter your Phone number"
+                                formControlName="phoneNumber">
+                        </div>
+                    </div>
+                </div>
+                <div class="card col-lg-6">
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="emailId">Email</label>
+                            <input class="form-control" type="text" placeholder="Enter your email address"
+                                formControlName="emailId">
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Address</label>
+                            <input class="form-control" type="text" placeholder="Enter your address"
+                                formControlName="address">
+                        </div>
+                        <div class="form-group">
+                            <label for="citizenship">Citizenship</label>
+                            <input class="form-control" type="number" placeholder="" formControlName="citizenship">
+
+                        </div>
+                        <div class="form-group">
+                            <label for="passport">Passport No</label>
+                            <input class="form-control" type="text" placeholder="Enter your passport number"
+                                formControlName="passport">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12 d-flex justify-content-lg-start">
+
+                <button class="btn bg-orange btn-md col-md-2 d-flex justify-content-lg-start text-white" role="button"
+                    aria-pressed="true" (click)=next(2)>Prev</button>
+            </div>
+            <div class="col-12 d-flex justify-content-lg-center">
+
+                <button class="btn bg-orange btn-md col-md-3 d-flex justify-content-lg-center text-white" role="button"
+                    aria-pressed="true">Submit</button>
+            </div>
+
+        </div>
+    </form>
+</div>
