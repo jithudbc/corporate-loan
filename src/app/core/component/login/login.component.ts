@@ -32,11 +32,12 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.invalid) {
         return;
     } else{
-      this.service.login(this.loginForm.value).subscribe(data=>{
-        console.log(data);
-        this.route.navigate(['dashboard']);
+      this.route.navigate(['dashboard']);
+      // this.service.login(this.loginForm.value).subscribe(data=>{
+      //   console.log(data);
+      //   this.route.navigate(['dashboard']);
         
-      });
+      // });
     }
 
     this.loading = true;
