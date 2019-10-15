@@ -1,0 +1,30 @@
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { LoanComponent } from './core/component/loan/loan.component';
+import { LoginComponent } from './core/component/login/login.component';
+import { DashboardComponent } from './core/component/dashboard/dashboard.component';
+import { HeaderComponent } from './layout/header/header.component';
+import { NavComponent } from './layout/nav/nav.component';
+import { FooterComponent } from './layout/footer/footer.component';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    LoanComponent,
+    LoginComponent,
+    DashboardComponent,
+    HeaderComponent,
+    NavComponent,
+    FooterComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
