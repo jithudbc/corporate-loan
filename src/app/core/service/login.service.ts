@@ -10,9 +10,8 @@ export class LoginService {
   constructor(private http:HttpClient) { }
 
   login(data){
-    let header = new HttpHeaders({
-      'Content-Type': 'application/json'
-    });
+    let header = new HttpHeaders();
+    header = header.append('Content-Type', 'application/json');
     return this.http.post(environment.baseUrl+"login",data,{headers:header});
   }
 }
