@@ -1,4 +1,4 @@
-<div class="d-flex justify-content-lg-center">
+<div class="d-flex justify-content-lg-center card-body">
     <form [formGroup]="mortgageForm" (ngSubmit)="mortgage()" class="col-lg-6">
         <div *ngIf="tab === 1">
             <div class="card">
@@ -13,18 +13,17 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label for="firstName">Amount</label>
-                            <input class="form-control" type="number" placeholder="Enter amount" formControlName="amount">
+                            <input class="form-control" type="number" placeholder="Enter amount"
+                                formControlName="amount">
                         </div>
                         <div class="form-group">
                             <label for="term">Term</label>
-                            <input class="form-control" type="number" placeholder="Enter term"
-                                formControlName="term">
+                            <input class="form-control" type="number" placeholder="Enter term" formControlName="term">
                         </div>
-                   
+
                         <div class="form-group">
                             <label for="usage">Usage</label>
-                            <input class="form-control" type="number" placeholder="Enter Usage"
-                                formControlName="usage">
+                            <input class="form-control" type="number" placeholder="Enter Usage" formControlName="usage">
                         </div>
 
                     </div>
@@ -33,12 +32,12 @@
             </div>
 
             <div class="col-lg-12 d-flex justify-content-lg-end pt-2 pr-0 ">
-                   
-                    <div class="col-6 d-flex justify-content-lg-end pr-0">
-                        <button class="btn bg-orange btn-md col-md-4 text-white" role="button"
-                            aria-pressed="true" (click)=next(2)>Next</button>
-                    </div>
+
+                <div class="col-6 d-flex justify-content-lg-end pr-0">
+                    <button class="btn bg-orange btn-md col-md-4 text-white" role="button" aria-pressed="true"
+                        (click)=next(2)>Next</button>
                 </div>
+            </div>
         </div>
 
         <div *ngIf="tab === 2">
@@ -58,16 +57,16 @@
                                 formControlName="name">
                         </div>
                         <div class="form-group">
-                                <label for="regNo">Commerical Age</label>
-                                <input class="form-control" type="text" placeholder="Enter your Commerical register"
-                                    formControlName="companyAge">
-                            </div>
+                            <label for="regNo">Commerical Age</label>
+                            <input class="form-control" type="text" placeholder="Enter your Commerical register"
+                                formControlName="companyAge">
+                        </div>
                         <div class="form-group">
                             <label for="employeeId">Corporate Address</label>
                             <input class="form-control" type="text" placeholder="Enter your Corporate address"
                                 formControlName="corporateAddress">
                         </div>
-                   
+
 
                         <div class="form-group">
                             <label for="revenue">Revenue Of Last year</label>
@@ -85,12 +84,12 @@
             </div>
             <div class="col-lg-12 d-flex pt-2 pl-0 pr-0">
                 <div class="col-6 d-flex justify-content-lg-start p-0">
-                    <button class="btn bg-orange btn-md col-md-4  text-white"
-                        role="button" aria-pressed="true" (click)=next(1)>Prev</button>
+                    <button class="btn bg-orange btn-md col-md-4  text-white" role="button" aria-pressed="true"
+                        (click)=next(1)>Prev</button>
                 </div>
                 <div class="col-6 d-flex justify-content-lg-end  p-0">
-                    <button class="btn bg-orange btn-md col-md-4 pl-0 text-white" role="button"
-                        aria-pressed="true" (click)=next(3)>Next</button>
+                    <button class="btn bg-orange btn-md col-md-4 pl-0 text-white" role="button" aria-pressed="true"
+                        (click)=next(3)>Next</button>
                 </div>
             </div>
         </div>
@@ -126,7 +125,7 @@
                             <input class="form-control" type="text" placeholder="Enter your Phone number"
                                 formControlName="phoneNumber">
                         </div>
-                   
+
                         <div class="form-group">
                             <label for="emailId">Email</label>
                             <input class="form-control" type="text" placeholder="Enter your email address"
@@ -139,7 +138,7 @@
                         </div>
                         <div class="form-group">
                             <label for="citizenship">Citizenship</label>
-                            <input class="form-control" type="number" placeholder="" formControlName="citizenship">
+                            <input class="form-control" type="text" placeholder="Enter your citizenship" formControlName="citizenship">
 
                         </div>
                         <div class="form-group">

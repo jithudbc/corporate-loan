@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup , FormBuilder , } from '@angular/forms'
+import { ApplyLoanService } from '../../service/apply-loan.service';
 
 @Component({
   selector: 'app-loan',
@@ -9,7 +10,8 @@ import { FormGroup , FormBuilder , } from '@angular/forms'
 export class LoanComponent implements OnInit {
   mortgageForm:FormGroup;
   tab = 1;
-  constructor( private fb: FormBuilder) { }
+
+  constructor( private fb: FormBuilder , private applyLoanService: ApplyLoanService) { }
 
   ngOnInit() {
     this.mortgageForm = this.fb.group({
@@ -39,6 +41,44 @@ export class LoanComponent implements OnInit {
   }
 
   mortgage(){
+    
+       let details = {
+
+        
+       "loanDetails" : {
+        "amount": this.mortgageForm.value.amount,
+        "term": this.mortgageForm.value.term,
+        "usage":this.mortgageForm.value.usage,
+
+       },
+       "corporateDetails":{
+        
+        "name": this.mortgageForm.value.name,
+        "corporateAddress": this.mortgageForm.value.corporateAddress,
+        "revenue": this.mortgageForm.value.revenue,
+        "regNo": this.mortgageForm.value.regNo,
+        
+        "companyAge":this.mortgageForm.value.firstName
+       },
+       "userDetails":{
+        "firstName": this.mortgageForm.value.firstName,
+        "lastName": this.mortgageForm.value.lastName,
+        "address":this.mortgageForm.value.address,
+        "citizenship":this.mortgageForm.value.citizenship,
+        "phoneNumber": this.mortgageForm.value.phoneNumber,
+        "dateOfBirth":this.mortgageForm.value.dateOfBirth,
+        "emailId": this.mortgageForm.value.emailId,
+        "passport":this.mortgageForm.value.passport,
+
+       }
+      }
+         
+      
+     // console.log(data);
+    
+    this.applyLoanService.applyLoan(JSON.stringify(details)).subscribe( data => {
+     /// console.log(data);
+    })
     
   }
 
