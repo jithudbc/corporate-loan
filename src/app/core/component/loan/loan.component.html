@@ -1,5 +1,5 @@
-<div class="d-flex justify-content-lg-center">
-    <form [formGroup]="mortgageForm" (ngSubmit)="mortgage()" class="col-lg-8">
+<div class="d-flex justify-content-lg-center card-body">
+    <form [formGroup]="mortgageForm" (ngSubmit)="mortgage()" class="col-lg-6">
         <div *ngIf="tab === 1">
             <div class="card">
                 <div class="card-header">
@@ -9,25 +9,21 @@
                 </div>
             </div>
             <div class="d-flex justify-content-lg-center">
-                <div class="card col-lg-6">
+                <div class="card col-lg-12">
                     <div class="card-body">
                         <div class="form-group">
                             <label for="firstName">Amount</label>
-                            <input class="form-control" type="text" placeholder="Enter amount" formControlName="amount">
+                            <input class="form-control" type="number" placeholder="Enter amount"
+                                formControlName="amount">
                         </div>
                         <div class="form-group">
                             <label for="term">Term</label>
-                            <input class="form-control" type="text" placeholder="Enter your last name"
-                                formControlName="term">
+                            <input class="form-control" type="number" placeholder="Enter term" formControlName="term">
                         </div>
-                    </div>
-                </div>
-                <div class="card col-lg-6">
-                    <div class="card-body">
+
                         <div class="form-group">
                             <label for="usage">Usage</label>
-                            <input class="form-control" type="number" placeholder="Enter your mobile number"
-                                formControlName="usage">
+                            <input class="form-control" type="number" placeholder="Enter Usage" formControlName="usage">
                         </div>
 
                     </div>
@@ -35,13 +31,12 @@
                 </div>
             </div>
 
-            <div class="col-lg-12 d-flex justify-content-lg-end">
-                <button type="button" class="btn btn-primary" (click)="next(2)">
-                    Next <span class="badge badge-light">></span>
+            <div class="col-lg-12 d-flex justify-content-lg-end pt-2 pr-0 ">
 
-                </button>
-
-
+                <div class="col-6 d-flex justify-content-lg-end pr-0">
+                    <button class="btn bg-orange btn-md col-md-4 text-white" role="button" aria-pressed="true"
+                        (click)=next(2)>Next</button>
+                </div>
             </div>
         </div>
 
@@ -54,7 +49,7 @@
                 </div>
             </div>
             <div class="d-flex justify-content-lg-center">
-                <div class="card col-lg-6 col-md-12">
+                <div class="card col-lg-12 col-md-12">
                     <div class="card-body">
                         <div class="form-group">
                             <label for="organisation">Corportae Name</label>
@@ -62,14 +57,16 @@
                                 formControlName="name">
                         </div>
                         <div class="form-group">
+                            <label for="regNo">Commerical Age</label>
+                            <input class="form-control" type="text" placeholder="Enter your Commerical register"
+                                formControlName="companyAge">
+                        </div>
+                        <div class="form-group">
                             <label for="employeeId">Corporate Address</label>
                             <input class="form-control" type="text" placeholder="Enter your Corporate address"
                                 formControlName="corporateAddress">
                         </div>
-                    </div>
-                </div>
-                <div class="card col-lg-6">
-                    <div class="card-body">
+
 
                         <div class="form-group">
                             <label for="revenue">Revenue Of Last year</label>
@@ -85,14 +82,14 @@
 
                 </div>
             </div>
-            <div class="col-lg-12 d-flex justify-content-lg-end">
-                <div class="col-6">
-                    <button class="btn bg-orange btn-md col-md-2 d-flex justify-content-lg-start text-white"
-                        role="button" aria-pressed="true" (click)=next(1)>Prev</button>
+            <div class="col-lg-12 d-flex pt-2 pl-0 pr-0">
+                <div class="col-6 d-flex justify-content-lg-start p-0">
+                    <button class="btn bg-orange btn-md col-md-4  text-white" role="button" aria-pressed="true"
+                        (click)=next(1)>Prev</button>
                 </div>
-                <div class="col-6">
-                    <button class="btn bg-orange btn-md col-md-2 d-flex justify-content-lg-end text-white" role="button"
-                        aria-pressed="true" (click)=next(3)>Next</button>
+                <div class="col-6 d-flex justify-content-lg-end  p-0">
+                    <button class="btn bg-orange btn-md col-md-4 pl-0 text-white" role="button" aria-pressed="true"
+                        (click)=next(3)>Next</button>
                 </div>
             </div>
         </div>
@@ -106,7 +103,7 @@
                 </div>
             </div>
             <div class="d-flex justify-content-lg-center">
-                <div class="card col-lg-6">
+                <div class="card col-lg-12">
                     <div class="card-body">
                         <div class="form-group">
                             <label for="firstName">First name</label>
@@ -120,7 +117,7 @@
                         </div>
                         <div class="form-group">
                             <label for="dateOfBirth">DOB</label>
-                            <input class="form-control" type="number" placeholder="Enter DOB "
+                            <input class="form-control" type="date" placeholder="Enter DOB "
                                 formControlName="dateOfBirth">
                         </div>
                         <div class="form-group">
@@ -128,10 +125,7 @@
                             <input class="form-control" type="text" placeholder="Enter your Phone number"
                                 formControlName="phoneNumber">
                         </div>
-                    </div>
-                </div>
-                <div class="card col-lg-6">
-                    <div class="card-body">
+
                         <div class="form-group">
                             <label for="emailId">Email</label>
                             <input class="form-control" type="text" placeholder="Enter your email address"
@@ -144,7 +138,7 @@
                         </div>
                         <div class="form-group">
                             <label for="citizenship">Citizenship</label>
-                            <input class="form-control" type="number" placeholder="" formControlName="citizenship">
+                            <input class="form-control" type="text" placeholder="Enter your citizenship" formControlName="citizenship">
 
                         </div>
                         <div class="form-group">
@@ -155,9 +149,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-12 d-flex justify-content-lg-start">
+            <div class="col-lg-12 d-flex justify-content-lg-start pt-2 pl-0">
 
-                <button class="btn bg-orange btn-md col-md-2 d-flex justify-content-lg-start text-white" role="button"
+                <button class="btn bg-orange btn-md col-md-2 d-flex justify-content-lg-center text-white" role="button"
                     aria-pressed="true" (click)=next(2)>Prev</button>
             </div>
             <div class="col-12 d-flex justify-content-lg-center">
