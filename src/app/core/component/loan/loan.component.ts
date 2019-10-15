@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup , FormBuilder , } from '@angular/forms'
+import { ApplyLoanService } from '../../service/apply-loan.service';
 
 @Component({
   selector: 'app-loan',
@@ -9,7 +10,7 @@ import { FormGroup , FormBuilder , } from '@angular/forms'
 export class LoanComponent implements OnInit {
   mortgageForm:FormGroup;
   tab = 1;
-  constructor( private fb: FormBuilder) { }
+  constructor( private fb: FormBuilder , private applyLoanService: ApplyLoanService) { }
 
   ngOnInit() {
     this.mortgageForm = this.fb.group({
@@ -39,6 +40,9 @@ export class LoanComponent implements OnInit {
   }
 
   mortgage(){
+    this.applyLoanService.applyLoan(this.mortgageForm.value).subscribe( data => {
+      console.log(data);
+    })
     
   }
 

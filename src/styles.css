@@ -3,3 +3,10 @@
 .bg-orange{
     background-color: #f78225;
 }
+
+.footer{
+    /* position: absolute; */
+    bottom:0;
+    height: 50px;
+    line-height: 16px;
+}
