@@ -42,33 +42,42 @@ export class LoanComponent implements OnInit {
 
   mortgage(){
     
-       let data = {
+       let details = {
 
         
        "loanDetails" : {
-         "firstName": this.mortgageForm.value.firstName,
-         "lastName": this.mortgageForm.value.lastName,
-         "address":this.mortgageForm.value.address,
-         "citizenship":this.mortgageForm.value.citizenship,
-         "phoneNumber": this.mortgageForm.value.phoneNumber,
-         "dateOfBirth":this.mortgageForm.value.dateOfBirth,
-         "emailId": this.mortgageForm.value.emailId,
-         "passport":this.mortgageForm.value.passport,
-         "name": this.mortgageForm.value.name,
-         "corporateAddress": this.mortgageForm.value.corporateAddress,
-         "revenue": this.mortgageForm.value.revenue,
-         "regNo": this.mortgageForm.value.regNo,
-         "amount": this.mortgageForm.value.amount,
-         "term": this.mortgageForm.value.term,
-         "usage":this.mortgageForm.value.usage,
-         "companyAge":this.mortgageForm.value.firstName
-          
-        }
-     }
-      console.log(this.mortgageForm.value);
+        "amount": this.mortgageForm.value.amount,
+        "term": this.mortgageForm.value.term,
+        "usage":this.mortgageForm.value.usage,
+
+       },
+       "corporateDetails":{
+        
+        "name": this.mortgageForm.value.name,
+        "corporateAddress": this.mortgageForm.value.corporateAddress,
+        "revenue": this.mortgageForm.value.revenue,
+        "regNo": this.mortgageForm.value.regNo,
+        
+        "companyAge":this.mortgageForm.value.firstName
+       },
+       "userDetails":{
+        "firstName": this.mortgageForm.value.firstName,
+        "lastName": this.mortgageForm.value.lastName,
+        "address":this.mortgageForm.value.address,
+        "citizenship":this.mortgageForm.value.citizenship,
+        "phoneNumber": this.mortgageForm.value.phoneNumber,
+        "dateOfBirth":this.mortgageForm.value.dateOfBirth,
+        "emailId": this.mortgageForm.value.emailId,
+        "passport":this.mortgageForm.value.passport,
+
+       }
+      }
+         
+      
+     // console.log(data);
     
-    this.applyLoanService.applyLoan(this.mortgageForm.value).subscribe( data => {
-      console.log(data);
+    this.applyLoanService.applyLoan(JSON.stringify(details)).subscribe( data => {
+     /// console.log(data);
     })
     
   }
