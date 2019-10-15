@@ -3,7 +3,8 @@
             <div class="card-title">
                 <div class="row">
                         <h4 class="text-white col-6">Corporate Bank</h4>
-                        <a routerLink="login"class="text-white col-6 text-right">Login</a>
+                        <a *ngIf="isLogin" routerLink="login"class="text-white col-6 text-right">Login</a>
+                        <a *ngIf="!isLogin" (click)="logout()" class="text-white col-6 text-right">Logout</a>
                 </div>
             </div>
         </div>

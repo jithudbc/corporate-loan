@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-
+  uname:any;
   constructor() { }
 
   ngOnInit() {
+    this.uname = JSON.parse(localStorage.getItem('userDetails')).username;
   }
 
 }

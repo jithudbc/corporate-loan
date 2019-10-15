@@ -33,11 +33,14 @@ export class LoginComponent implements OnInit {
         return;
     } else{
       this.route.navigate(['dashboard']);
-      this.service.login(this.loginForm.value).subscribe(data=>{
-        console.log(data);
-        this.route.navigate(['dashboard']);
+      let key = 'userDetails';
+        localStorage.setItem(key, JSON.stringify(this.loginForm.value));
+      // this.service.login(this.loginForm.value).subscribe(data=>{
+      //   console.log(data);
         
-      });
+      //   this.route.navigate(['dashboard']);
+        
+      // });
     }
 
     this.loading = true;
