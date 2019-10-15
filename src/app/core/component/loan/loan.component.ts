@@ -42,33 +42,37 @@ export class LoanComponent implements OnInit {
 
   mortgage(){
     
+     let date = this.mortgageForm.value.dateOfBirth+"T00:00:00";
+
+    // console.log(date);
        let details = {
 
         
        "loanDetails" : {
-        "amount": this.mortgageForm.value.amount,
-        "term": this.mortgageForm.value.term,
-        "usage":this.mortgageForm.value.usage,
+        "amount": this.mortgageForm.value.amount ? this.mortgageForm.value.amount : '',
+        "term": this.mortgageForm.value.term ? this.mortgageForm.value.term: '',
+        "usage":this.mortgageForm.value.usage? this.mortgageForm.value.usage:''
 
        },
        "corporateDetails":{
         
-        "name": this.mortgageForm.value.name,
-        "corporateAddress": this.mortgageForm.value.corporateAddress,
-        "revenue": this.mortgageForm.value.revenue,
-        "regNo": this.mortgageForm.value.regNo,
+        "name": this.mortgageForm.value.name ? this.mortgageForm.value.name : '',
+        "corporateAddress": this.mortgageForm.value.corporateAddress? this.mortgageForm.value.corporateAddress :'',
+        "revenue": this.mortgageForm.value.revenue ? this.mortgageForm.value.revenue: '',
+        "regNo": this.mortgageForm.value.regNo ? this.mortgageForm.value.regNo: '',
         
-        "companyAge":this.mortgageForm.value.firstName
+        "companyAge":this.mortgageForm.value.companyAge ? this.mortgageForm.value.companyAge: ''
        },
        "userDetails":{
-        "firstName": this.mortgageForm.value.firstName,
-        "lastName": this.mortgageForm.value.lastName,
-        "address":this.mortgageForm.value.address,
-        "citizenship":this.mortgageForm.value.citizenship,
-        "phoneNumber": this.mortgageForm.value.phoneNumber,
-        "dateOfBirth":this.mortgageForm.value.dateOfBirth,
-        "emailId": this.mortgageForm.value.emailId,
-        "passport":this.mortgageForm.value.passport,
+        "firstName": this.mortgageForm.value.firstName ?this.mortgageForm.value.firstName: '',
+        "lastName": this.mortgageForm.value.lastName ? this.mortgageForm.value.lastName: '',
+        "address":this.mortgageForm.value.address ? this.mortgageForm.value.address: '',
+        "citizenship":this.mortgageForm.value.citizenship ?this.mortgageForm.value.citizenship:'',
+        "phoneNumber": this.mortgageForm.value.phoneNumber ? this.mortgageForm.value.phoneNumber:'',
+        "dateOfBirth":date? date: '',
+        "emailId": this.mortgageForm.value.emailId ? this.mortgageForm.value.emailId : '',
+        "passport": "M7691801DB"
+       // "passport":"this.mortgageForm.value.passport",
 
        }
       }
@@ -76,7 +80,7 @@ export class LoanComponent implements OnInit {
       
      // console.log(data);
     
-    this.applyLoanService.applyLoan(JSON.stringify(details)).subscribe( data => {
+    this.applyLoanService.applyLoan(details).subscribe( data => {
      /// console.log(data);
     })
     
