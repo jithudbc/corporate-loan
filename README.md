@@ -15,8 +15,8 @@
 
 4)Login Component
   After successful completion of loan application,
-  Customer will receive a user name with password after successful
-   Verification of business login in backend serve.
+  Customer will receive a email with user name and password after successful
+   Verification of business login from backend serve.
 
 5) Apply-loan service:
   This service is called after filling all the information in the Apply-Loan component.
